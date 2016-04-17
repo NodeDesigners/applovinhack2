@@ -23,14 +23,14 @@ var T = new Twit({
 
 
 
-app.post('/tweet', function(req, res){
-  var message = JSON.parse(Object.keys(req.body)[0]).message
-  T.post('statuses/update', { status: message }, function(err, data, response) {
-    console.log(data)
-    res.send(data)
-  })
+app.post('/tweet', function (req, res) {
+ var message = JSON.parse(Object.keys(req.body)[0]).message
+ console.log(message);
+ T.post('statuses/update', { status: message }, function(err, data, response) {
+   console.log(data)
+   res.send(data)
+ })
 });
-
 app.post('/tweetIMG', function(req, res){
     console.log(req.body)
     var message = req.body.message;

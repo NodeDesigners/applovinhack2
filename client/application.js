@@ -23,7 +23,7 @@ var Presenter = {
 
       if (event.target.getAttribute('class') && event.target.getAttribute('class') === 'tweet-button') {
         console.log('i am doing stuff!')
-        resourceLoader.postTweet({ message: event.target.getAttribute('gifToTweet')}, function (response) {
+        resourceLoader.postTweet(JSON.stringify({ message: event.target.getAttribute('gifToTweet')}), function (response) {
           var tweetAlert = self.createAlert('Tweet Posted!', 'Now go browse more gifs');
           tweetAlert.addEventListener('select', self.load.bind(self))
           self.pushDocument(tweetAlert);
@@ -125,16 +125,16 @@ ResourceLoader.prototype.getGifs = function (searchTerm, callback) {
   return getGifsXHR;
 }
 ResourceLoader.prototype.postTweet = function (tweet, callback) {
-  url = this.BASEURL + 'tweet'
-  var postDatTweet = new XMLHttpRequest();
-  postDatTweet.onreadystatechange = function () {
-    if (postDatTweet.readyState === 4) {
-      callback(postDatTweet.response);
-    }
-  }
-  postDatTweet.open('POST', url, true);
-  postDatTweet.send(tweet);
-  return postDatTweet
+ url = this.BASEURL + 'tweet'
+ var postDatTweet = new XMLHttpRequest();
+ postDatTweet.onreadystatechange = function () {
+   if (postDatTweet.readyState === 4) {
+     callback(postDatTweet.response);
+   }
+ }
+ postDatTweet.open('POST', url, true);
+ postDatTweet.send(tweet);
+ return postDatTweet
 }
 
 ResourceLoader.prototype.returnDigits = function (placeholder, callback) {
