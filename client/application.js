@@ -2,7 +2,7 @@ var resourceLoader;
 var digits;
 
 App.onLaunch = function(options) {
-  options.BASEURL = options.BASEURL || 'http://localhost:9001/'
+  options.BASEURL = options.BASEURL || 'https://twiffsyapp.herokuapp.com/'
 
   var javascriptFiles = [
     `${options.BASEURL}js/ResourceLoader.js`,
