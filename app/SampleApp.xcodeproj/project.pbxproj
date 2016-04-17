@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82B1FF241CC32F7300622E1A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B1FF231CC32F7200622E1A /* ImageIO.framework */; };
 		C93A68121C2A9DF200E45ABA /* TVCustomStylesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93A68111C2A9DF200E45ABA /* TVCustomStylesController.m */; };
 		C93A68151C2A9F5400E45ABA /* TVCustomElementsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93A68141C2A9F5400E45ABA /* TVCustomElementsController.m */; };
 		C95846601C255FB100B2AEA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C958465F1C255FB100B2AEA4 /* main.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82B1FF231CC32F7200622E1A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		C93A68101C2A9DF200E45ABA /* TVCustomStylesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVCustomStylesController.h; sourceTree = "<group>"; };
 		C93A68111C2A9DF200E45ABA /* TVCustomStylesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVCustomStylesController.m; sourceTree = "<group>"; };
 		C93A68131C2A9F5400E45ABA /* TVCustomElementsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVCustomElementsController.h; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B1FF241CC32F7300622E1A /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		C95846521C255FB100B2AEA4 = {
 			isa = PBXGroup;
 			children = (
+				82B1FF231CC32F7200622E1A /* ImageIO.framework */,
 				C9743C791C2566910045E233 /* TVExtendedInterfaceCreator */,
 				C958465D1C255FB100B2AEA4 /* SampleApp */,
 				C958465C1C255FB100B2AEA4 /* Products */,
