@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const port = 9001;
+const port =  process.env.PORT || 9001;
 const morgan = require('morgan');
 var bodyParser = require('body-parser');
 var Twit = require('twit')

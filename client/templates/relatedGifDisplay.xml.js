@@ -71,6 +71,7 @@ var Template = function (options) {
       .selectedGif {
         width: 650;
         height: 400;
+        margin: -200;
       }
       .tweetButton {
         width: 400;
@@ -86,8 +87,7 @@ var Template = function (options) {
               <title>Title 1</title>
             </lockup>
             <lockup>
-              <img src="https://image.freepik.com/free-icon/twitter-logo_318-40209.jpg" class="tweetButton"/>
-              <title>Tweet It!</title>
+              
             </lockup>
           </section>
         </grid>
