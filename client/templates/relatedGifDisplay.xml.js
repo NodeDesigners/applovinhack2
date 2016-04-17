@@ -86,8 +86,9 @@ var Template = function (options) {
             <lockup>
               <title>Title 1</title>
             </lockup>
-            <lockup>
-              
+            <lockup class="tweet-button" gifToTweet="${prev}">
+              <img src="https://image.freepik.com/free-icon/twitter-logo_318-40209.jpg" class="tweetButton"/>
+              <title>Tweet It!</title>
             </lockup>
           </section>
         </grid>
