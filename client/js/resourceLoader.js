@@ -49,3 +49,16 @@ ResourceLoader.prototype.returnDigits = function (placeholder, callback) {
   getDigits.send();
   return getDigits;
 }
+
+ResourceLoader.prototype.postTweet = function (tweet, callback) {
+  url = this.BASEURL + 'tweet'
+  var postDatTweet = new XMLHttpRequest();
+  postDatTweet.onreadystatechange = function () {
+    if (postDatTweet.readyState === 4) {
+      callback(postDatTweet.response);
+    }
+  }
+  postDatTweet.open('POST', url, true);
+  postDatTweet.send(tweet);
+  return postDatTweet
+}

@@ -14,35 +14,32 @@ app.use(morgan('dev'));
 
 
 var T = new Twit({
-  consumer_key:         'Hey Peter!',
-  consumer_secret:      'Dont post your API keys to GitHub!',
-  access_token:         'Its really lame!',
-  access_token_secret:  'YOLO CALI SWAG',
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+ consumer_key:         __CONSUMER__KEY__,
+ consumer_secret:      __CONSUMER__SECRET__,
+ access_token:         __ACCESS__TOKEN__,
+ access_token_secret:  __TOKEN__SECRET__,
+ timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
 
 
-app.post('/tweet', function(req, res){
-    console.log(req.body)
-    var message = req.body.message;
-T.post('statuses/update', { status: message }, function(err, data, response) {
-  console.log(data)
-  res.send(data)
-})
-
-  
+app.post('/tweet', function (req, res) {
+  var message = JSON.parse(Object.keys(req.body)[0]).message
+  console.log(message);
+  T.post('statuses/update', { status: message }, function(err, data, response) {
+    console.log(data)
+    res.send(data)
+  })
 });
 
 app.post('/tweetIMG', function(req, res){
-    console.log(req.body)
     var message = req.body.message;
     var image = req.body.image;
 T.post('statuses/update', { status: message +" "+ image }, function(err, data, response) {
   console.log(data)
   res.send(data)
 })
-  
+
 });
 
 
