@@ -83,7 +83,6 @@ var Template = function (options) {
         <grid>
           <section>
             <lockup>
-              <img src="${prev}" class="selectedGif" />
               <title>Title 1</title>
             </lockup>
             <lockup>
@@ -92,6 +91,7 @@ var Template = function (options) {
             </lockup>
           </section>
         </grid>
+              <tvce-image src="${prev}" class="selectedGif" />
         // ${sections}
       </collectionList>
     </stackTemplate>
