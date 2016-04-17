@@ -14,11 +14,11 @@ app.use(morgan('dev'));
 
 
 var T = new Twit({
-  consumer_key:         'r4RZCNQpAok6maL6nmQfxbzob',
-  consumer_secret:      '3ejAD0iN9rJjFmZBXQ7sIZhMTdOOGNkdDu2czIDp58CHdG4nj7',
-  access_token:         '2992542397-PKBi9egkOqVRQZf6eI71aMtmzxHDmXBDUzAusBM',
-  access_token_secret:  '9RIcbywvijjYZAAfeF4yhFHTkO99ywYyiOY01fb5SkfAk',
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+consumer_key:         __CONSUMER__KEY__,
+consumer_secret:      __CONSUMER__SECRET__,
+access_token:         __ACCESS__TOKEN__,
+access_token_secret:  __TOKEN__SECRET__,
+timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
 
@@ -31,6 +31,7 @@ app.post('/tweet', function (req, res) {
    res.send(data)
  })
 });
+
 app.post('/tweetIMG', function(req, res){
     console.log(req.body)
     var message = req.body.message;
