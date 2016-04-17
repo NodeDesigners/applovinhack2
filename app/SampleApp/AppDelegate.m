@@ -20,7 +20,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    NSString *TVBaseURL = @"http://localhost:9001/";
+    NSString *TVBaseURL = @"https://twiffsyapp.herokuapp.com/";
     NSString *TVBootURL = [TVBaseURL stringByAppendingString:@"application.js"];
     
     TVApplicationControllerContext * appControllerContext = [TVApplicationControllerContext new];
