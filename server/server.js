@@ -14,10 +14,10 @@ app.use(morgan('dev'));
 
 
 var T = new Twit({
-  consumer_key:         'Hey Peter!',
-  consumer_secret:      'Dont post your API keys to GitHub!',
-  access_token:         'Its really lame!',
-  access_token_secret:  'YOLO CALI SWAG',
+  consumer_key:         'r4RZCNQpAok6maL6nmQfxbzob',
+  consumer_secret:      '3ejAD0iN9rJjFmZBXQ7sIZhMTdOOGNkdDu2czIDp58CHdG4nj7',
+  access_token:         '2992542397-PKBi9egkOqVRQZf6eI71aMtmzxHDmXBDUzAusBM',
+  access_token_secret:  '9RIcbywvijjYZAAfeF4yhFHTkO99ywYyiOY01fb5SkfAk',
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
