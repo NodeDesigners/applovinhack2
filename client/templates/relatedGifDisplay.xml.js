@@ -2,6 +2,7 @@ var Template = function (options) {
   console.log(options)
   var prev = options.url;
 
+
   var generateMediumImageLockups = function (data) {
     var tags = data.tags.reduce(function (allTags, tag) {
       return allTags === '' ? tag : allTags + ',' + tag
@@ -10,6 +11,8 @@ var Template = function (options) {
               <img src="${data.media.preview}" class="medium" />
     </lockup>`;
   };
+
+  var infoMatrix = [];
 
   var generateSections = function (lockups) {
     var rows = [[]];
@@ -22,8 +25,10 @@ var Template = function (options) {
         rowIndex++;
         rows.push([]);
         rows[rowIndex].push(item);
+        infoMatrix[rowIndex].push(item);
       } else {
         rows[rowIndex].push(item);
+        infoMatrix[rowIndex].push(item);
       }
     });
     var TVML = rows.map(function (array) {
