@@ -1,13 +1,24 @@
-# Custom TVML Elements & Styles
-A Sample Project how to add custom TVML Elements and Styles to your TVML/TVJS Project using TVElementFactory, TVStyleFactory and the TVInterfaceCreating Protocol
+#Twiffsy
+![](/logo/Desktop.png)
 
-# The Story behind
-A [blog post](https://medium.com/shopgate-mobile-commerce/hacking-tvml-4387e65a9b94#.jwos3hwdi) about the motivation.
+##Getting Started
+To run the server:
+```npm install```
 
-# How to run
-1. Start the simple http-server by going into ./sample-template (Terminal) and use python -m SimpleHTTPServer 9001
-2. Open the Xcode-Project in the ./app folder and run the App
+```cd server```
 
-# Sample App
-The Sample App demonstrates how to use custom fonts + text-decoration and is easily extendable.
-![Screenshot of SampleApp](https://raw.githubusercontent.com/shopgate/custom-tvml-elements/master/screenshot.png)
+```node server.js```
+
+Then, build and run the xcode.
+
+##Sources
+
+I used the following resources for this:
+
+https://www.raywenderlich.com/114886/beginning-tvos-development-with-tvml-tutorial
+
+This tutorial provides a step by step walkthrough of setting up a TVML app.
+
+https://developer.apple.com/library/tvos/samplecode/TVMLCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016505-Intro-DontLinkElementID_2
+
+This is sample code provided by Apple of a TVML app. It has a very large number of sample TVML templates, and is thus a very good resource.
