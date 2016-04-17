@@ -28,7 +28,7 @@
 		C93A68131C2A9F5400E45ABA /* TVCustomElementsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVCustomElementsController.h; sourceTree = "<group>"; };
 		C93A68141C2A9F5400E45ABA /* TVCustomElementsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVCustomElementsController.m; sourceTree = "<group>"; };
 		C93A68191C2A9FB900E45ABA /* TVCustomElementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVCustomElementProtocol.h; sourceTree = "<group>"; };
-		C958465B1C255FB100B2AEA4 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C958465B1C255FB100B2AEA4 /* Twiffsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twiffsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C958465F1C255FB100B2AEA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C95846611C255FB100B2AEA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C95846621C255FB100B2AEA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		C958465C1C255FB100B2AEA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C958465B1C255FB100B2AEA4 /* SampleApp.app */,
+				C958465B1C255FB100B2AEA4 /* Twiffsy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C958465A1C255FB100B2AEA4 /* SampleApp */ = {
+		C958465A1C255FB100B2AEA4 /* Twiffsy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C958466F1C255FB100B2AEA4 /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildConfigurationList = C958466F1C255FB100B2AEA4 /* Build configuration list for PBXNativeTarget "Twiffsy" */;
 			buildPhases = (
 				C95846571C255FB100B2AEA4 /* Sources */,
 				C95846581C255FB100B2AEA4 /* Frameworks */,
@@ -164,9 +164,9 @@
 			);
 			dependencies = (
 			);
-			name = SampleApp;
+			name = Twiffsy;
 			productName = SampleApp;
-			productReference = C958465B1C255FB100B2AEA4 /* SampleApp.app */;
+			productReference = C958465B1C255FB100B2AEA4 /* Twiffsy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C95846561C255FB100B2AEA4 /* Build configuration list for PBXProject "SampleApp" */;
+			buildConfigurationList = C95846561C255FB100B2AEA4 /* Build configuration list for PBXProject "Twiffsy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -196,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C958465A1C255FB100B2AEA4 /* SampleApp */,
+				C958465A1C255FB100B2AEA4 /* Twiffsy */,
 			);
 		};
 /* End PBXProject section */
@@ -321,7 +321,7 @@
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shopgate.TVMLSampleApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Twiffsy;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
@@ -334,7 +334,7 @@
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shopgate.TVMLSampleApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Twiffsy;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
@@ -342,7 +342,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C95846561C255FB100B2AEA4 /* Build configuration list for PBXProject "SampleApp" */ = {
+		C95846561C255FB100B2AEA4 /* Build configuration list for PBXProject "Twiffsy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C958466D1C255FB100B2AEA4 /* Debug */,
@@ -351,7 +351,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C958466F1C255FB100B2AEA4 /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+		C958466F1C255FB100B2AEA4 /* Build configuration list for PBXNativeTarget "Twiffsy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C95846701C255FB100B2AEA4 /* Debug */,
