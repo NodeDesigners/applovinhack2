@@ -1,5 +1,4 @@
 var resourceLoader;
-var digits;
 
 App.onLaunch = function(options) {
   options.BASEURL = options.BASEURL || 'http://localhost:9001/'
@@ -13,9 +12,6 @@ App.onLaunch = function(options) {
   evaluateScripts(javascriptFiles, function(success) {
     if(success) {
       resourceLoader = new ResourceLoader(options.BASEURL);
-      digits = resourceLoader.returnDigits(null, function(response) {
-        return response;
-      });
       resourceLoader.getGifs(null, function (response) {
         resourceLoader.loadResource(`${options.BASEURL}templates/initialGifDisplay.xml.js`,
           response.results.map(function (gif) {
@@ -40,4 +36,3 @@ App.onLaunch = function(options) {
   });
 
 };
-
