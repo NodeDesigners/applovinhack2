@@ -2,6 +2,8 @@ var resourceLoader;
 var digits;
 
 App.onLaunch = function(options) {
+  options.BASEURL = options.BASEURL || 'http://localhost:9001/'
+
   var javascriptFiles = [
     `${options.BASEURL}js/ResourceLoader.js`,
     `${options.BASEURL}js/Presenter.js`,
