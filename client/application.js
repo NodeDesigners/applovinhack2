@@ -1,7 +1,7 @@
 var resourceLoader;
+var digits;
 
 App.onLaunch = function(options) {
-  options.BASEURL = options.BASEURL || 'http://localhost:9001/';
   var javascriptFiles = [
     `${options.BASEURL}js/ResourceLoader.js`,
     `${options.BASEURL}js/Presenter.js`,
@@ -11,10 +11,18 @@ App.onLaunch = function(options) {
   evaluateScripts(javascriptFiles, function(success) {
     if(success) {
       resourceLoader = new ResourceLoader(options.BASEURL);
+      digits = resourceLoader.returnDigits(null, function(response) {
+        return response;
+      });
       resourceLoader.getGifs(null, function (response) {
         resourceLoader.loadResource(`${options.BASEURL}templates/initialGifDisplay.xml.js`,
           response.results.map(function (gif) {
-            return gif.media[0].gif.preview
+            var gifObject = {
+              media: gif.media[0].gif,
+              tags: gif.tags,
+              id: gif.id
+            }
+            return gifObject
           }),
           function (resource) {
             var doc = Presenter.makeDocument(resource);
@@ -24,19 +32,8 @@ App.onLaunch = function(options) {
         );
       })
     } else {
-      var title = "failed to eval js";
-      var description = options.BASEURL;
-      var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
-    <document>
-      <alertTemplate>
-        <title>${title}</title>
-        <description>${description}</description>
-        <button><text>I'm sorry!</text></button>
-      </alertTemplate>
-    </document>`
-    var parser = new DOMParser();
-    var alertDoc = parser.parseFromString(alertString, "application/xml")
-      navigationDocument.presentModal(alertDoc);
+      var errorDoc = Presenter.createAlert("Evaluate Scripts Error", "Error attempting to evaluate external JavaScript files.");
+      navigationDocument.presentModal(errorDoc);
     }
   });
 

@@ -1,12 +1,13 @@
 var Template = function(data) {
 
-  // data = ['http://49.media.tumblr.com/0d5ed85f652a0dd357d66221a0cb04e7/tumblr_nyxrlsrDsI1s5f7v4o1_1280.gif'];
 
-  var generateMediumImageLockups = function(url){
-    return `<lockup>
-              <img src="${url}" class="medium" />
-    </lockup>
-    `;
+  var generateMediumImageLockups = function(data){
+    var tags = data.tags.reduce(function (allTags, tag) {
+      return allTags === '' ?  tag : allTags + ',' + tag
+    }, '')
+    return `<lockup url="${data.media.url}" preview="${data.media.preview}" tags="${tags}" id="${data.id}">
+              <img src="${data.media.preview}" class="medium" />
+    </lockup>`;
   };
 
   var generateSections = function(lockups){

@@ -1,20 +1,23 @@
-var Template = function(prev, data) { 
-  var prev = 'https://goo.gl/7o04NE';
-  var data = ['https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE','https://goo.gl/7o04NE']
-  var generateMediumImageLockups = function(url){
-    return `<lockup>
-              <img src="${url}" class="medium" />
-              <title class="scrollTextOnHighlight">Title 1</title>
+var Template = function (options) {
+  console.log(options)
+  var prev = options.url;
+
+  var generateMediumImageLockups = function (data) {
+    var tags = data.tags.reduce(function (allTags, tag) {
+      return allTags === '' ? tag : allTags + ',' + tag
+    }, '')
+    return `<lockup url="${data.media.url}" preview="${data.media.preview}" tags="${tags}" id="${data.id}">
+              <img src="${data.media.preview}" class="medium" />
     </lockup>`;
   };
 
-  var generateSections = function(lockups){
+  var generateSections = function (lockups) {
     var rows = [[]];
     var count = 0;
     var rowIndex = 0;
-    lockups.forEach(function(item, index){
+    lockups.forEach(function (item, index) {
       count++;
-      if(count > 5){
+      if (count > 5) {
         count = 0;
         rowIndex++;
         rows.push([]);
@@ -23,13 +26,27 @@ var Template = function(prev, data) {
         rows[rowIndex].push(item);
       }
     });
-    var TVML = rows.map(function(array){
+    var TVML = rows.map(function (array) {
       return '<shelf><section>' + array.join('') + '</section></shelf>';
     });
     return TVML.join('');
   };
 
-  var sections = generateSections(data.map(generateMediumImageLockups));
+  var sections = generateSections(options.related.map(generateMediumImageLockups));
+
+
+  // var relatedGifs = resourceLoader.getGifs(options.tags.split(',').join('+'), function (response) {
+  //   var related = response.results.map(function (gif) {
+  //     var gifObject = {
+  //       media: gif.media[0].gif,
+  //       tags: gif.tags,
+  //       id: gif.id
+  //     }
+  //     return gifObject
+  //   })
+  //   sections = generateSections(related.map(generateMediumImageLockups))
+  // })
+
 
   return `<?xml version="1.0" encoding="UTF-8" ?>
   <document>
@@ -75,7 +92,7 @@ var Template = function(prev, data) {
             </lockup>
           </section>
         </grid>
-        ${sections}
+        // ${sections}
       </collectionList>
     </stackTemplate>
   </document>`

@@ -35,3 +35,17 @@ ResourceLoader.prototype.getGifs = function (searchTerm, callback) {
   getGifsXHR.send();
   return getGifsXHR;
 }
+
+ResourceLoader.prototype.returnDigits = function (placeholder, callback) {
+  placeholder = null;
+  var url = 'https://cdn.digits.com/1/sdk.js';
+
+  var getDigits = new XMLHttpRequest();
+  getDigits.responseType = '';
+  getDigits.onreadystatechange = function () {
+    callback(getDigits.response);
+  }
+  getDigits.open('GET', url, true);
+  getDigits.send();
+  return getDigits;
+}
