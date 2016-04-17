@@ -10,8 +10,7 @@ var Presenter = {
       gifObj.preview = event.target.getAttribute('preview');
       gifObj.tags = event.target.getAttribute('tags');
       gifObj.id = event.target.getAttribute('id');
-​
-​
+
       resourceLoader.loadResource(
         `${resourceLoader.BASEURL}templates/loading.xml.js`,
         'Loading...',
@@ -21,16 +20,16 @@ var Presenter = {
           self.pushDocument(loadingDoc);
         }
       );
-​
+
       if (event.target.getAttribute('class') && event.target.getAttribute('class') === 'tweet-button') {
         console.log('i am doing stuff!')
-        resourceLoader.postTweet(event.target.getAttribute('gifToTweet'), function (response) {
+        resourceLoader.postTweet({ message: event.target.getAttribute('gifToTweet')}, function (response) {
           var tweetAlert = self.createAlert('Tweet Posted!', 'Now go browse more gifs');
           tweetAlert.addEventListener('select', self.load.bind(self))
           self.pushDocument(tweetAlert);
         })
       }
-​
+
       resourceLoader.getGifs(gifObj.tags.split(',').join('+'), function (response) {
         gifObj.related = response.results.map(function (gif) {
           var gifObject = {
@@ -52,9 +51,7 @@ var Presenter = {
       })
     }
   },
-​
-​
-​
+
   makeDocument: function (resource) {
     if (!Presenter.parser) {
       Presenter.parser = new DOMParser();
@@ -62,19 +59,19 @@ var Presenter = {
     var doc = Presenter.parser.parseFromString(resource, "application/xml");
     return doc;
   },
-​
+
   modalDialogPresenter: function (xml) {
     navigationDocument.presentModal(xml);
   },
-​
+
   replaceDocument: function (newDoc, oldDoc) {
     navigationDocument.replaceDocument(newDoc, oldDoc);
   },
-​
+
   pushDocument: function (xml) {
     navigationDocument.pushDocument(xml);
   },
-​
+
   createAlert: function (title, description) {
     var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
     <document>
