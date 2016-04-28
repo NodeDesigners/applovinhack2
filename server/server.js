@@ -16,8 +16,8 @@ app.use(morgan('dev'));
 var T = new Twit({
   consumer_key:         'K7R5QUTIQxWUTHIwOQDPYGqoP',
   consumer_secret:      '7NmiQEtrTfjiWTbQmGFVDkKk0X5TuqHAv3ToljdEXeZMl6Twej',
-  access_token:         '2992542397-PKBi9egkOqVRQZf6eI71aMtmzxHDmXBDUzAusBM',
-  access_token_secret:  '9RIcbywvijjYZAAfeF4yhFHTkO99ywYyiOY01fb5SkfAk',
+  access_token:         '725801723969720320-vUQesI1QF5zkAJaKa8vJkqTsUq3iLYH',
+  access_token_secret:  'DD3R99iMFsHbsMfcRVKtDfEGCZmiq5rTMJkds6AwHUycB',
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
